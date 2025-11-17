@@ -48,14 +48,14 @@ make
 #include "io/result_writer.h"
 
 // Загрузка изображения
-auto image = ImageLoader::loadFromFile("path/to/image.jpg");
+auto imageLoader = ImageLoader::loadFromFile("path/to/image.jpg");
 
 // Инициализация детектора
 QRDetector detector;
 detector.setPreprocessingEnabled(true);
 
 // Распознавание QR-кода
-auto result = detector.detectFromImage(image);
+auto result = detector.detectFromImage(imageLoader.image);
 
 // Сохранение результатов
 ResultWriter::printToConsole(result);
